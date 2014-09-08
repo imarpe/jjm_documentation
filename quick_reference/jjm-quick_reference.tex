@@ -54,11 +54,11 @@
 
 %---------------- SECCIÓN 1: PRE REQUISITOS ----------------%
 \section{Prerrequisitos} 
-En esta sección se darán las pautas previas a la ejecución del modelo. Para dicho fin, se hará uso de dos lenguajes de programación (\textbf{C++} y \textbf{R}) por lo que, del mismo modo, se utilizarán dos softwares relacionados a cada uno de ellos (\textbf{EMACS} y \textbf{RStudio}).
+En esta sección se darán las pautas previas a la ejecución del modelo. Para dicho fin, se hará uso de lenguajes de programación (\textbf{C++} y \textbf{R}) por lo que, del mismo modo, se utilizarán dos softwares (editores) que permitirán trabajar con ellos (\textbf{VIM} y \textbf{RStudio}).
 
 %---------------- 1.1 Instalación de ADMB ----------------%
 \subsection{Instalación de \texttt{ADMB}}
-\texttt{Emacs} es un editor de texto con una gran cantidad de funciones, muy popular entre programadores y usuarios técnicos. Dentro de nuestros intereses, es el programa que usaremos para abrir, editar y compilar el código de \textbf{ADMB} (hecho en \textbf{C++}).
+\texttt{ADMB} (\textbf{Automatic Diferentiation Model Builder}) es un editor de texto con una gran cantidad de funciones, muy popular entre programadores y usuarios técnicos. Dentro de nuestros intereses, es el programa que usaremos para abrir, editar y compilar el código de \textbf{ADMB} (hecho en \textbf{C++}).
 
 Para la instalación debemos:
 \begin{enumerate}
@@ -179,54 +179,10 @@ Estimating row 2 out of 2 for hessian
 \end{enumerate}
 \pagebreak
 
-%---------------- 1.2 Instalación de EMACS ----------------%
-\subsection{Instalación de EMACS}
-\begin{enumerate}
-\item Ir al website: \url{http://www.admb-project.org/tools/admb-ide} y dar click en \textbf{Download}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth,resolution=300,frame]{emacs-1}
-\caption{Web de \textbf{ADMB}}
-\end{figure}
-
-\item Ejecutar el instalador con las opciones por defecto.
-
-\begin{figure}[H]
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth,resolution=300,frame]{emacs-7}
-  \caption{Inicio de instalación}
-\end{subfigure}
-\qquad
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth,resolution=300,frame]{emacs-8}
-  \caption{Seleccionar componentes}
-\end{subfigure}
-
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth,resolution=300,frame]{emacs-9}
-  \caption{Seleccionar acciones adicionales}
-\end{subfigure}
-\qquad
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth,resolution=300,frame]{emacs-10}
-  \caption{Confirmación de instalación}
-\end{subfigure}
-\caption{Proceso de instalación \textbf{ADMB}.}
-\label{fig:installADMB}
-\end{figure}
-\pagebreak
-\end{enumerate}
-\pagebreak
-
-%---------------- 1.3 Instalación de R y RStudio ----------------%
+%---------------- 1.2 Instalación de R y RStudio ----------------%
 \subsection{Instalación de \texttt{R} y \texttt{RStudio}}
 
-%---------------- 1.3.1 Instalación de R ----------------%
+%---------------- 1.2.1 Instalación de R ----------------%
 \subsubsection{Instalación de \texttt{R}}
 Para obtener los resultados en \texttt{JJM}, se debe utilizar \texttt{R 3.0.0} o superior. Instalar \texttt{R} de la siguiente manera.
 
@@ -343,7 +299,7 @@ La secuencia de pasos para el proceso de instalación de \texttt{R} son mostrados
 \end{figure}
 \pagebreak
 
-%---------------- 1.3.2 Instalación de RStudio ----------------%
+%---------------- 1.2.2 Instalación de RStudio ----------------%
 \subsubsection{Instalación de \texttt{RStudio}}
 
 \texttt{RStudio} es una interface de usuario para \texttt{R}. Es libre y de código abierto (Open Source) y se encuentra disponible para los sistemas operativos Windows, Mac y Linux.
@@ -649,53 +605,7 @@ Para cualquier caso, lo primero será crear una cuenta en la web de \texttt{GitHu
 \end{itemize}
 \pagebreak
 
-%---------------- 2.2 Compilación del modelo ----------------%
-\subsection{Compilación del modelo}
 
-\texttt{C++} es el lenguaje en el que se encuentra codificado el modelo propiamente dicho. Compilar significa traducir los comandos escritos en \texttt{C++} a binario (lenguaje de máquina). Para lograr este paso se requiere únicamente el archivo \texttt{jjm.tpl}, que es el que contiene al código de \textbf{JJM} para ser ejecutado en \textbf{ADMB}.
-
-A continuación, se mostrarán los pasos para la compilación del modelo desde el editor de texto \textbf{EMACS} y desde una venta de símbolo de sistema. Se usarán los scripts de la carpeta \texttt{/Code/admb/}.
-
-%---------------- 2.1.1 Compilación desde EMACS ----------------%
-\subsubsection{Compilación desde EMACS}
-\begin{enumerate}[rightmargin=0.3cm]
-% Paso 01
-\item Asegurarse de tener en la carpeta \texttt{admb} los siguientes archivos:
-
-\begin{enumerate}
-\item \texttt{cleanad.bat}
-\item \texttt{jjm.tpl}
-\item \texttt{[modelo(s)].ctl}
-\item \texttt{[data asociada al modelo(s)].dat}
-\item \texttt{MyArchive.bat}
-\item \texttt{readme.md}
-\item \texttt{run.bat}
-\item \texttt{[archivo de parámetros iniciales asociados al modelo(s)].par} (Si fuera necesario)
-\end{enumerate}
-\pagebreak
-
-% Paso 02
-\item Abrir el archivo \texttt{jjm.tpl} en el software \textbf{EMACS}.
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth,resolution=300,frame]{emacs-3.png}
-\caption{Código del modelo en el entorno de \textbf{EMACS}}
-\end{figure}
-
-% Paso 03
-\item Presionar el botón \texttt{Build} y esperar a que finalice la ejecución.
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth,resolution=300,frame]{emacs-4.png}
-\caption{Compilar el código}
-\end{figure}
-\end{enumerate}
-\pagebreak
-
-
-
-%---------------- 2.1.1 Compilación desde el terminal ----------------%
-\pagebreak
 
 %---------------- SECCIÓN 3: Ejecución de JJM  ----------------%
 \section{Ejecución de JJM}
@@ -783,7 +693,7 @@ Para averiguar el archivo "\texttt{[data asociada al modelo].dat}" basta con abr
  
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.85,resolution=300,frame]{emacs-2.png}
+\includegraphics[scale=0.85,resolution=300,frame]{vim-1.png}
 \caption{Obtención del archivo \texttt{.dat} relacionado}
 \end{figure}
 
@@ -795,7 +705,7 @@ Para averiguar el archivo "\texttt{[data asociada al modelo].dat}" basta con abr
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.85,resolution=300,frame]{emacs-5-1.png}
+\includegraphics[scale=0.85,resolution=300,frame]{admb-8.png}
 \caption{Carpeta \texttt{Code/}}
 \end{figure}
 
@@ -803,7 +713,7 @@ Para averiguar el archivo "\texttt{[data asociada al modelo].dat}" basta con abr
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.85,resolution=300,frame]{emacs-5-2.png}
+\includegraphics[scale=0.85,resolution=300,frame]{admb-9.png}
 \caption{Opción \textbf{Abrir ventana de comandos aquí}}
 \end{figure}
 \end{enumerate}
@@ -813,7 +723,7 @@ Para averiguar el archivo "\texttt{[data asociada al modelo].dat}" basta con abr
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth,resolution=300,frame]{emacs-6.png}
+\includegraphics[width=0.8\textwidth,resolution=300,frame]{admb-10.png}
 \caption{Ventana de comandos}
 \end{figure}
 
