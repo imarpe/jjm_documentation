@@ -100,12 +100,12 @@ Para la instalación debemos:
 \caption{Abrir \textbf{Rapid Environment Editor} en modo Administrador}
 \end{figure}
 
-\item Buscar la línea \textbf{Path}, dar click derecho y selccionar la opción \textbf{A?adir valor}
+\item Buscar la línea \textbf{Path}, dar click derecho y selccionar la opción \textbf{Añadir valor}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth,resolution=300,frame]{admb-4}
-\caption{A?adir valor}
+\caption{Añadir valor}
 \end{figure}
 \pagebreak
 
@@ -121,14 +121,16 @@ Para la instalación debemos:
 
 \item Realizar el mismo procedimiento para las siguientes carpetas: \texttt{C:\textbackslash mingw\textbackslash bin}, \texttt{C:\textbackslash mingw\textbackslash msys\textbackslash bin}
 
-\item Luego, ir a \textbf{Editar}, opción \textbf{A?adir variable}
+\item Luego, ir a \textbf{Editar}, opción \textbf{Añadir variable}
 
 \item En la ventana que se abre, escribir \textbf{ADMB\_HOME} y \textbf{Aceptar}.
+
+\item El programa, por defecto, pedirá agregar un valor, agregar la ubicación de la carpeta \textbf{admb}. De este modo, para el ejemplo, se indicaría el lugar de la carpeta \texttt{C:\textbackslash 	admb}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth,resolution=300,frame]{admb-6}
-\caption{A?adir variable \textbf{ADMB\_HOME}}
+\caption{Añadir variable \textbf{ADMB\_HOME}}
 \end{figure}
 
 \item Seguidamente, ir al menú \textbf{Archivo} y seleccionar la opción \textbf{Guardar}. Cerrar \textbf{Rapid Environment Editor}.
@@ -411,7 +413,7 @@ La secuencia de pasos para el proceso de instalación de \texttt{RStudio} son mos
 \end{figure}
 \pagebreak
 
-Al acceder a \texttt{RStudio}, se observará una ventana subdividida tal cual se muestra en la Figura~\ref{fig:instalationRS11}. En la parte izquierda se hallará la \textbf{consola}; en la superior derecha, el espacio de trabajo (\textbf{Workspace}) y el historial de trabajo (\textbf{History}); en la inferior derecha, cuatro pesta?as: \textbf{Files}, \textbf{Plots}, \textbf{Packages}, \textbf{Help} y \textbf{Viewer}. Finalmente, en la parte superior de la ventana se encuentra la barra de herramientas.
+Al acceder a \texttt{RStudio}, se observará una ventana subdividida tal cual se muestra en la Figura~\ref{fig:instalationRS11}. En la parte izquierda se hallará la \textbf{consola}; en la superior derecha, el espacio de trabajo (\textbf{Workspace}) y el historial de trabajo (\textbf{History}); en la inferior derecha, cuatro pestañas: \textbf{Files}, \textbf{Plots}, \textbf{Packages}, \textbf{Help} y \textbf{Viewer}. Finalmente, en la parte superior de la ventana se encuentra la barra de herramientas.
 
 \begin{figure}[H]
 \centering
@@ -423,8 +425,8 @@ Al acceder a \texttt{RStudio}, se observará una ventana subdividida tal cual se 
 %---------------- SECCIÓN 2: INSTALACIÓN DE JJM ----------------%
 \section{Instalación de \texttt{JJM}}
 
-%---------------- 2.1 ?Cómo obtener una copia desde GitHub ----------------%
-\subsection{?Cómo obtener una copia desde \texttt{GitHub}?}
+%---------------- 2.1 ¿Cómo obtener una copia desde GitHub ----------------%
+\subsection{¿Cómo obtener una copia desde \texttt{GitHub}?}
 
 El código necesario para ejecutar \texttt{JJM} se encuentra alojado en el servidor \texttt{GitHub}. Para descargar una imagen almacenada o para sincronizar se hará uso del programa \texttt{TortoiseGit}.
 
@@ -459,7 +461,7 @@ Descargar \texttt{TortoiseGit} desde \url{https://code.google.com/p/tortoisegit/
 
 \item Por defecto, lo copiado en el paso (2) se pegará en el campo \textbf{URL:}.
 
-\item En el campo \textbf{Directory:}, asegurarse que la dirección corresponda a la carpeta que acabamos de crear. Esto es porque, por defecto, se a?ade a la carpeta elegida el nombre del repositorio. Por ejemplo: en nuestro caso, la carpeta destino que aparecerá es \texttt{Escritorio\textbackslash SPRFMO\_SC\textbackslash jack\_mackerel} y debemos cambiar a \texttt{Escritorio\textbackslash SPRFMO\_SC}.
+\item En el campo \textbf{Directory:}, asegurarse que la dirección corresponda a la carpeta que acabamos de crear. Esto es porque, por defecto, se añade a la carpeta elegida el nombre del repositorio. Por ejemplo: en nuestro caso, la carpeta destino que aparecerá es \texttt{Escritorio\textbackslash SPRFMO\_SC\textbackslash jack\_mackerel} y debemos cambiar a \texttt{Escritorio\textbackslash SPRFMO\_SC}.
 
 \item Dar click en \textbf{Aceptar} y esperar a que termine la copia.
 
@@ -566,7 +568,7 @@ Para cualquier caso, lo primero será crear una cuenta en la web de \texttt{GitHu
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.8\linewidth,resolution=300,frame]{github-12}
-  \caption{Ventana de confirmación de contrase?a}
+  \caption{Ventana de confirmación de contraseña}
   \label{fig:sfig2}
 \end{subfigure}
 \caption{Ventanas de confirmación de \textbf{Push}}
@@ -689,7 +691,7 @@ echo on
 \subsection{Ejecución}
 A continuación, se detallarán los pasos para correr cualquiera de los modelos dentro del repositorio. Para ello se requiere conocer el nombre del archivo con extensión \texttt{.ctl} (archivo de control) y su respectivo \texttt{.dat} (data asociada).
 
-Para averiguar el archivo "\texttt{[data asociada al modelo].dat}" basta con abrir el archivo \texttt{[nombre de modelo].ctl} con \textbf{EMACS} y verificar la primera línea.
+Para averiguar el archivo "\texttt{[data asociada al modelo].dat}" basta con abrir el archivo \texttt{[nombre de modelo].ctl} con \textbf{VIM} y verificar la primera línea.
  
 \begin{figure}[H]
 \centering
@@ -785,7 +787,7 @@ Existe, por otro lado, una carpeta llamada \texttt{HCRFramework}. Dicha carpeta 
 \caption{Llegar al menú de opciones generales en \textbf{RStudio}}
 \end{figure}
 
-\item En la pesta?a \textbf{General}, click en el botón \textbf{Change}
+\item En la pestaña \textbf{General}, click en el botón \textbf{Change}
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.85,resolution=300,frame]{6-2.png}
@@ -821,11 +823,11 @@ Existe, por otro lado, una carpeta llamada \texttt{HCRFramework}. Dicha carpeta 
 % Parámetros LaTeX para código R
 \lstset{ %
 language=R,                         % Lenguaje del código
-basicstyle=\footnotesize\ttfamily,  % Tama?o de la fuente usada
+basicstyle=\footnotesize\ttfamily,  % Tamaño de la fuente usada
 keywordstyle=\bfseries\color{blue}, % Color aplicado a las funciones
 commentstyle=\color{olivegreen} ,   % Color aplicado a los comentarios
 numbers=left,                       % Posición de los números de línea
-numberstyle=\tiny,                  % Tama?o de la funte para los números de línea
+numberstyle=\tiny,                  % Tamaño de la funte para los números de línea
 stepnumber=1,                       % Salto de línea en línea
 numbersep=5pt,                      % Distancia entre los números de línea y el código
 backgroundcolor=\color{white},      % Color de fondo
