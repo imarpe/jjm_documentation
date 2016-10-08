@@ -53,34 +53,26 @@
 
 %---------------- SECCIÓN 1: PRE REQUISITOS ----------------%
 \section{Prerrequisitos} 
-En esta sección se darán las pautas previas a la ejecución del modelo. Para dicho fin, se hará uso de lenguajes de programación (\textbf{C++} y \textbf{R}) por lo que, del mismo modo, se utilizarán dos softwares (editores) que permitirán trabajar con ellos (\textbf{VIM} y \textbf{RStudio}).
+En esta sección se detalla el procedimiento de instalación del software necesario para la ejecución del modelo JJM. Es necesario contar con compiladores de \textbf{C++} y  \textbf{R} (e idealmente R Studio). Así mismo, se utilizará el editor de texto (\textbf{Vim}.
 
 %---------------- 1.1 Instalación de ADMB ----------------%
 \subsection{Instalación de \texttt{ADMB}}
-\texttt{ADMB} (\textbf{Automatic Diferentiation Model Builder}) es un editor de texto con una gran cantidad de funciones, muy popular entre programadores y usuarios técnicos. Dentro de nuestros intereses, es el programa que usaremos para abrir, editar y compilar el código de \textbf{ADMB} (hecho en \textbf{C++}).
+\texttt{ADMB} (\textbf{Automatic Diferentiation Model Builder}) es un lenguaje de scripting basado en C++ que implementa utilidades para el uso de AUTODIF, una librería de C++ que permite el calculo de derivadas de manera exacta. ADMB es ampliamente utilizado para la estimación robusta de parámetros de modelos complejos. 
 
 Para la instalación debemos:
 \begin{enumerate}
-\item Descargar el programa \textbf{Rapid Environment Editor} desde  \url{http://www.rapidee.com/en/download} e instalarlo.
 
-\item Ir al website \url{http://www.admb-project.org/tools/admb-tools-for-windows} y seleccionar \textbf{ADMB Tools for nn-bit Windows}, donde \textbf{nn} (32 o 64) depende del ordenador en donde se está trabajando.
-
-\item Este link, llevará a descargar el archivo \textbf{ADMBtoolsnn-vv.7z}, donde \textbf{vv} es el número de versión.
-
-\item Retornar al website \url{http://www.admb-project.org/tools/admb-tools-for-windows} y seleccionar el link \texttt{ADMB vv.v.rrrr binary library for nn-bit Windows}, donde \textbf{vv.v} es el número de versión y \textbf{rrrr} es el número de revisión de ADMB.
-
-\item Ir al directorio donde se descargaron ambos archivos \textbf{.7z}. Dar click derecho en el archivo \textbf{ADMBtools} y seleccionar \textbf{Extraer aquí}.
+\item Ir al website \url{http://www.admb-project.org/tools/admb-tools-for-windows} y seleccionar \textbf{ADMB Tools for 64-bit Windows} (o la versión para 32 bits si posee un equipo más antiguo). Este enlace descargará el archivo \textbf{ADMB-tool-for-64-bits-windows.zip} (o 32 bits de ser el caso). Dar click derecho en el archivo y seleccionar \textbf{Extraer aquí}.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth,resolution=300,frame]{admb-1}
-\caption{Descompresión del archivo \textbf{ADMBtools64-02.7z}}
+\caption{Descompresión del archivo \textbf{ADMB-tool-for-64-bits-windows.zip}}
 \end{figure}
-\pagebreak
 
-\item Una vez completada la extracción, la carpeta obtenida contendrá una carpeta llamada \textbf{mingw}. Copiar (o cortar-pegar) \textbf{mingw} a la locación deseada. Para este ejemplo, la locación será \texttt{C:\textbackslash}. Por lo que, finalmente, se tendrá \texttt{C:\textbackslash mingw}.
+\item Una vez completada la extracción, la carpeta obtenida contendrá una carpeta llamada \textbf{mingw}. Copiar (o cortar-pegar) \textbf{mingw} a la locación deseada, por ejemplo, a \texttt{C:\textbackslash} (necesitará permisos de administrador). Con esto se obtendrá la carpeta \texttt{C:\textbackslash mingw}.
 
-\item Ir al directorio donde se descargaron ambos archivos \textbf{.7z}. Dar click derecho en el archivo \textbf{ADMBlib64.11.1.1483} y seleccionar \textbf{Extraer aquí}.
+\item Retornar al website \url{http://www.admb-project.org/tools/admb-tools-for-windows} y seleccionar el link \texttt{ADMB 11.1.1483 binary library for 64-bit Windows}, donde \textbf{11.1.1483} es el número de versión actual (a Octubre 2016), que podría cambiar de acuerdo a la actualizaciones de ADMB. Dar click derecho en el archivo \textbf{ADMBlib64.11.1.1483} y seleccionar \textbf{Extraer aquí}.
 
 \begin{figure}[H]
 \centering
@@ -88,10 +80,10 @@ Para la instalación debemos:
 \caption{Descompresión del archivo \textbf{ADMBlib64.11.1.1483.7z}}
 \end{figure}
 
-\item Una vez completada la extracción, renombrar la carpeta con el nombre \textbf{admb} y copiar (o cortar-pegar) a la locación deseada. Para este ejemplo, la locación será \texttt{C:\textbackslash}. Por lo que, finalmente, se tendrá \texttt{C:\textbackslash admb}.
-\pagebreak
+\item Una vez completada la extracción, renombrar la carpeta con el nombre \textbf{admb} y copiar (o cortar-pegar) a la locación deseada. Para este ejemplo, la locación será \texttt{C:\textbackslash} (necesitará permisos de administrador). Con esto se obtendrá la carpeta \texttt{C:\textbackslash admb}.
 
-\item Seguidamente, es momento de decirle a Windows dónde se encuentran los archivos. Para esto se utilizará el programa \textbf{Rapid Environment Editor} (citado anteriormente). Ir a $Inicio \rightarrow Programas \rightarrow Rapid Environment Editor \rightarrow Rapid Environment Editor$. Ejecutar como administrador dando click derecho en el Acceso directo.
+
+\item Seguidamente, es momento de decirle a Windows dónde se encuentran los archivos. Para esto se utilizará el programa \textbf{Rapid Environment Editor} (citado anteriormente). Este programa se puede descargar desde  \url{http://www.rapidee.com/en/download}. Luego de la descarga, proceder a la instalación. Este programa nos permitirá editar las \emph{variables de entorno} necesarias para poder ejecutar ADMB. Se recomienda instalar la versión para 32-bit \& 64-bit en un solo paquete. Luego de instalado, ir a $Inicio \rightarrow Programas \rightarrow Rapid Environment Editor \rightarrow Rapid Environment Editor$. Ejecutar como administrador dando click derecho en el Acceso directo.
 
 \begin{figure}[H]
 \centering
